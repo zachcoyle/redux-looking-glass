@@ -31,11 +31,13 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
-  "author": "",
+  "author": "Zach Coyle",
   "homepage": "",
   "license": "MIT",
-  "repository": "",
+  "repository": "https://github.com/zachcoyle/redux-looking-glass",
   "keywords": [
-    "react-component"
+    "react-component",
+    "redux",
+    "lenses"
   ]
 }
