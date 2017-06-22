@@ -4,10 +4,10 @@
 
 
 # <center>redux-looking glass</center>
-## <center>(and what Alice found there)</center>
+### <center>(and what Alice found there)</center>
 
 
-<center>![image](https://upload.wikimedia.org/wikipedia/commons/9/96/Aliceroom3.jpg)</center>
+![](https://upload.wikimedia.org/wikipedia/commons/9/96/Aliceroom3.jpg)
 
 
 
@@ -15,7 +15,9 @@ Redux requires too much boilerplate (and misdirection).
 
 Let's use it as a primitive instead!
 
-###Installation
+
+## Installation
+
 
 `npm install --save redux-looking-glass`
 
@@ -24,7 +26,7 @@ or
 `yarn add redux-looking-glass`
 
 
-###Examples
+## Examples
 
 #### Redux Store Configuration
 
@@ -46,7 +48,7 @@ const configureStore = (preloadedState) =>
 
 ---
 
-####Your Component
+#### Your Component
 
 ```
 
@@ -92,7 +94,7 @@ const ConnectedCheshireCat = lookingGlass([cheshireCatLenses])(/*mapStateToProps
 ```
 
 
-<center>![image](https://cdn-images-1.medium.com/max/1600/1*bbIuIH0F1kbzxem3LJNnSg.jpeg)</center>
+![](https://cdn-images-1.medium.com/max/1600/1*bbIuIH0F1kbzxem3LJNnSg.jpeg)
 
 
 
