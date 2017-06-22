@@ -76,7 +76,6 @@ const nextVisibility = (visibility) => {
   }[visibility]
 }
 
-
 const CheshireCat = ({ visibility='invisibile', setVisibility }) =>
   <div>
     {displayVisibility(visibility)}
@@ -89,6 +88,8 @@ const CheshireCat = ({ visibility='invisibile', setVisibility }) =>
 
 const ConnectedCheshireCat = lookingGlass([cheshireCatLenses])(/*mapStateToProps, mapDispatchToProps*/)(CheshireCat)
 
+
+export default ConnectedCheshireCat
 
 
 ```
