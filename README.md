@@ -62,19 +62,17 @@ const cheshireCatLenses = cheshireLensFamily([
   'status.visibility',
 ])
 
-const displayVisibility = (visibility) => {
+const displayVisibility = (visibility) => ({
   invisibile: ' ',
   visible: '😸',
   smile: '👄',
-}[visibility]
+}[visibility])
 
-const nextVisibility = (visibility) => {
-  return {
-    invisibile: 'visible',
-    visible: 'smile',
-    smile: 'invisibile',
-  }[visibility]
-}
+const nextVisibility = (visibility) => ({
+  invisibile: 'visible',
+  visible: 'smile',
+  smile: 'invisibile',
+}[visibility])
 
 const CheshireCat = ({ visibility='invisibile', setVisibility }) =>
   <div>
