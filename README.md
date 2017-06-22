@@ -4,7 +4,7 @@
 
 
 # <center>redux-looking glass</center>
-### <center>(and what Alice found there)</center>
+
 
 
 ![](https://upload.wikimedia.org/wikipedia/commons/9/96/Aliceroom3.jpg)
