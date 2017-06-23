@@ -82,21 +82,21 @@ const capitalize = node =>
   node.substr(0, 1).toUpperCase() + node.substr(1)
 
 
-export const lensRequest = dispatch => (path, uri) => {
+export const lensRequest = dispatch => ({ path, url, method='GET', body={} }) => {
   const lensPath = normalizeLensPath(path)
   const requestFunc = async (getState) => {
     dispatch({
       type: `LENS-REQUEST-STARTED: ${prettyPath(normalizeLensPath(lensPath))}`,
       lensPath,
-      uri,
+      url,
       newVal: { loading: true, finished: false },
     })
 
 
     try {
-      const response = await fetch(uri)
+      const response = await fetch(url, { method, body })
       const json = await response.json()
-      dispatch({ type: `LENS-REQUEST-RECEIVED: ${prettyPath(lensPath)}`, lensPath, newVal: { loading: false, finished: true, value: json} })
+      dispatch({ type: `LENS-REQUEST-RECEIVED: ${prettyPath(lensPath)}`, lensPath, newVal: { loading: false, finished: true, value: json } })
     } catch (e) {
       dispatch({ type: `LENS-REQUEST-RECEIVED: ${prettyPath(lensPath)}`, lensPath, newVal: { loading: false, finished: true, error: e.message } })
     }
@@ -148,9 +148,7 @@ const generateLensDispatches = (lensFamilies, dispatch) => {
 const dispatchWrapper = (mapDispatchToProps, lensFamilies, dataSources) => (dispatch, props) => {
   const dispatchProps = typeof mapDispatchToProps === 'function' ? mapDispatchToProps(dispatch, props) : mapDispatchToProps;
   const lensDispatchProps = generateLensDispatches(lensFamilies, dispatch)
-  const asyncDispatchProps = R.mergeAll(dataSources.map(({ lensPath, location }) => {
-    return lensRequest(dispatch)(lensPath, location)
-  }))
+  const asyncDispatchProps = R.mergeAll(dataSources.map(lensRequest(dispatch))
   return { ...dispatchProps, ...lensDispatchProps, ...asyncDispatchProps }
 }
 
