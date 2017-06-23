@@ -128,7 +128,6 @@ export const lensReducer = (reducer=R.identity) => (state = {}, action) => {
 
 
 const mapLensToDispatch = dispatch => lensPath => ({
-  console.warn('mapLensToDispatch\'s lensPath: ', lensPath)
   [`set${capitalize(normalizedName(lensPath))}`]: (value) => dispatch(lensAction(lensPath)(value)),
 })
 
