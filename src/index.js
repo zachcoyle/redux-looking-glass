@@ -86,7 +86,7 @@ export const lensRequest = dispatch => ({ path, url, method='GET', body={} }) =>
   const lensPath = normalizeLensPath(path)
   const requestFunc = async (getState) => {
     dispatch({
-      type: `LENS-REQUEST-STARTED: ${prettyPath(normalizeLensPath(lensPath))}`,
+      type: `LENS-REQUEST-STARTED: ${prettyPath(lensPath)}`,
       lensPath,
       url,
       newVal: { loading: true, finished: false },
@@ -128,6 +128,7 @@ export const lensReducer = (reducer=R.identity) => (state = {}, action) => {
 
 
 const mapLensToDispatch = dispatch => lensPath => ({
+  console.warn('mapLensToDispatch\'s lensPath: ', lensPath)
   [`set${capitalize(normalizedName(lensPath))}`]: (value) => dispatch(lensAction(lensPath)(value)),
 })
 
