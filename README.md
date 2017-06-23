@@ -30,7 +30,7 @@ or
 
 #### Redux Store Configuration
 
-```
+```javascript
 
 import { createStore } from 'redux'
 import myRootReducer from 'Reducers'
@@ -50,7 +50,7 @@ const configureStore = (preloadedState) =>
 
 #### Your Component
 
-```
+```javascript
 
 import React from 'react'
 import lookingGlass, { lensFamily } from 'redux-looking-glass'
