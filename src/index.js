@@ -148,7 +148,7 @@ const generateLensDispatches = (lensFamilies, dispatch) => {
 const dispatchWrapper = (mapDispatchToProps, lensFamilies, dataSources) => (dispatch, props) => {
   const dispatchProps = typeof mapDispatchToProps === 'function' ? mapDispatchToProps(dispatch, props) : mapDispatchToProps;
   const lensDispatchProps = generateLensDispatches(lensFamilies, dispatch)
-  const asyncDispatchProps = R.mergeAll(dataSources.map(lensRequest(dispatch))
+  const asyncDispatchProps = R.mergeAll(dataSources.map(lensRequest(dispatch)))
   return { ...dispatchProps, ...lensDispatchProps, ...asyncDispatchProps }
 }
 
