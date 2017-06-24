@@ -28,7 +28,8 @@
   "devDependencies": {
     "nwb": "^0.17.1",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "redux": "^3.7.0"
   },
   "author": "Zach Coyle",
   "homepage": "",
