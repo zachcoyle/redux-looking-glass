@@ -21,13 +21,10 @@
   "dependencies": {
     "parse-int": "^1.0.2",
     "ramda": "^0.24.1",
-    "react-redux": "^5.0.5",
-    "redux": "^3.7.0"
+    "react-redux": "^5.0.5"
   },
   "peerDependencies": {
-    "react": "15.x",
-    "react-redux": "^5.0.5",
-    "redux": "^3.7.0"
+    "react": "15.x"
   },
   "devDependencies": {
     "nwb": "^0.17.1",
