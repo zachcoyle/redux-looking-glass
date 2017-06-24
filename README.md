@@ -36,14 +36,14 @@ or
 
 The three main exports from `redux-looking-glass` are:
 
-###`lensReducer`
+### `lensReducer`
 
 This function wraps your root reducer, and allows `redux-looking-glass` to do its thing.
 
 ([see example](#redux-store-configuration))
 
 
-###`lensFamily`
+### `lensFamily`
 
 This is a curried helper function that just helps you avoid repeating yourself.
 
@@ -75,7 +75,7 @@ simply returns
 
 
 
-###`lookingGlass`
+### `lookingGlass`
 
 This is a curried higher-order-component `lookingGlass([lensFamilies], [dataSources])` returns a function that has the same signature as `react-redux`'s `connect` (and `connect` is called under the hood). 
 
@@ -153,10 +153,10 @@ export default ConnectedCheshireCat
 
 
 
-##Async Lenses
+## Async Lenses
 
 
-####Current Limitations:
+#### Current Limitations:
 
 * limited to network side effects
 * only supports json
@@ -169,7 +169,7 @@ const ConnectedCheshireCat = lookingGlass([cheshireCatLenses], [dataSource])(/*m
 
 More documentation on async lenses coming soon
 
-###The implementation of async lenses is likely to change, and should currently be considered experimental!
+### The implementation of async lenses is likely to change, and should currently be considered experimental!
 
 
 
