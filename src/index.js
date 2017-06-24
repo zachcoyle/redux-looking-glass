@@ -1,12 +1,12 @@
 import React from 'react'
 import R from 'ramda'
-import parseInt from 'parse-int'
 
 import { connect } from 'react-redux'
 
 // todo: refactoring
 
-const notNum = node => (typeof parseInt(node) === 'undefined')
+const notNum = node => !R.defaultTo(false)(parseInt(node))
+
 
 export const arrayFromString = s =>
   R.filter(R.identity,
