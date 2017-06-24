@@ -55,10 +55,10 @@ lensFamily('wonderland.cheshire')(
 
 // note the following is also valid notation and can be mixed and matched if needed
 
-// lensFamily(['wonderland', 'cheshire'])(
-//   ['status', 'visibility],
-//   ['location', 'tree'],
-// )
+lensFamily(['wonderland', 'cheshire'])(
+  ['status', 'visibility],
+  ['location', 'tree'],
+)
 
 
 ```
