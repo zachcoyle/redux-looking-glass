@@ -19,6 +19,8 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
+    "fluent-compose": "^0.0.1",
+    "lodash": "^4.17.4",
     "ramda": "^0.24.1"
   },
   "peerDependencies": {
@@ -29,7 +31,10 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
-    "redux": "^3.7.0"
+    "redux": "^3.7.0",
+    "redux-form": "^6.8.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0"
   },
   "author": "Zach Coyle",
   "homepage": "",

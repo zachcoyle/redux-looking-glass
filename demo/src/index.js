@@ -1,15 +1,16 @@
-import React, {Component} from 'react'
-import {render} from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 
-import Example from '../../src'
+import Demo from './Demo';
+import registerServiceWorker from './registerServiceWorker';
+import store from './configureStore'
 
-class Demo extends Component {
-  render() {
-    return <div>
-      <h1>redux-looking-glass Demo</h1>
-      <Example/>
-    </div>
-  }
-}
+ReactDOM.render(
+  <Provider store={store}>
+    <Demo />
+  </Provider>,
 
-render(<Demo/>, document.querySelector('#demo'))
+  document.getElementById('demo')
+);
+registerServiceWorker();

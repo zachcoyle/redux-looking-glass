@@ -127,7 +127,7 @@ export const lensReducer = (reducer=R.identity) => (state = {}, action) => {
 }
 
 
-const mapLensToDispatch = dispatch => lensPath => ({
+const dispatchFromLens = dispatch => lensPath => ({
   [`set${capitalize(normalizedName(lensPath))}`]: (value) => dispatch(lensAction(lensPath, value)),
 })
 
@@ -136,14 +136,17 @@ const mapLensToDispatch = dispatch => lensPath => ({
 const generateLensDispatches = (lensFamilies, dispatch) => {
   const dispatches =
     R.mergeAll(
-      R.map(fam =>
-        R.mergeAll(
-          fam.map(mapLensToDispatch(dispatch))
-        ),
-      lensFamilies)
+      lensFamilies.map(fam =>
+        R.mergeAll( fam.map(dispatchFromLens(dispatch)) ))
     )
   return dispatches
 }
+
+
+const mergeProps = (stateProps, dispatchProps, ownProps) => {
+  return { ...stateProps, ...dispatchProps, ...ownProps }
+}
+
 
 const dispatchWrapper = (mapDispatchToProps, lensFamilies, dataSources) => (dispatch, props) => {
   const dispatchProps = typeof mapDispatchToProps === 'function' ? mapDispatchToProps(dispatch, props) : mapDispatchToProps;
@@ -162,7 +165,7 @@ const mapStateWrapper = (mapStateToProps, lensFamilies) => (state, props) => {
 const lookingGlass = (lensFamilies, dataSources=[]) => (mapStateToProps, mapDispatchToProps) => Comp => ({ ...rest }) => {
   const dispatchProps = dispatchWrapper(mapDispatchToProps, lensFamilies, dataSources)
   const stateProps = mapStateWrapper(mapStateToProps, lensFamilies)
-  const ComponentWithLenses = connect(stateProps, dispatchProps)(Comp)
+  const ComponentWithLenses = connect(stateProps, dispatchProps, mergeProps)(Comp)
   return <ComponentWithLenses {...rest} />
 }
 
