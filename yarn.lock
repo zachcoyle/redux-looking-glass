@@ -2381,12 +2381,6 @@ flatten@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
 
-fluent-compose@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/fluent-compose/-/fluent-compose-0.0.1.tgz#02a471c871ea96b9bec5e730174c30ba42cfeba9"
-  dependencies:
-    lodash "^4.17.4"
-
 for-in@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
