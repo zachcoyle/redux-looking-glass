@@ -71,7 +71,7 @@ export const viewLenses = lensPaths => (state, ownProps) =>
   mapLenses(lensPaths, state)
 
 
-export const lensAction = lensPath => newVal => ({
+export const lensAction = (lensPath, newVal) => ({
   type: `LENS-UPDATE: ${prettyPath(lensPath)}`,
   lensPath,
   newVal,
@@ -128,7 +128,7 @@ export const lensReducer = (reducer=R.identity) => (state = {}, action) => {
 
 
 const mapLensToDispatch = dispatch => lensPath => ({
-  [`set${capitalize(normalizedName(lensPath))}`]: (value) => dispatch(lensAction(lensPath)(value)),
+  [`set${capitalize(normalizedName(lensPath))}`]: (value) => dispatch(lensAction(lensPath, value)),
 })
 
 
