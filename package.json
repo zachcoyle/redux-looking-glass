@@ -1,6 +1,6 @@
 {
   "name": "redux-looking-glass",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "redux-looking-glass React component",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -19,8 +19,6 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
-    "fluent-compose": "^0.0.1",
-    "lodash": "^4.17.4",
     "ramda": "^0.24.1"
   },
   "peerDependencies": {
